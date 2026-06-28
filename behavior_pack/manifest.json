@@ -1,0 +1,40 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Zombie Apocalypse - Smarter zombies and survival mechanics.",
+        "name": "Zombie Apocalypse BP",
+        "uuid": "80bdd2eb-0c5e-44ee-892b-e96db86d66c6",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 20, 0]
+    },
+    "modules": [
+        {
+            "description": "Behavior Pack Module",
+            "type": "data",
+            "uuid": "d101e481-2cef-449d-bfb9-09c1ff9428de",
+            "version": [1, 0, 0]
+        },
+        {
+            "description": "Scripting Module",
+            "type": "script",
+            "language": "javascript",
+            "uuid": "bfb27a6f-435c-4604-a0e1-7d5dcc7d127e",
+            "version": [1, 0, 0],
+            "entry": "scripts/main.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.7.0"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "1.1.0"
+        },
+        {
+            "uuid": "7e960fc7-5f4e-4075-8455-1a347d782e8a",
+            "version": [1, 0, 0]
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "Zombie Apocalypse RP",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "spoiled_food": {
+            "textures": "textures/items/spoiled_food"
+        }
+    }
+}

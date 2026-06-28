@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Zombie Apocalypse - Smarter zombies and survival mechanics.",
+        "name": "Zombie Apocalypse RP",
+        "uuid": "7e960fc7-5f4e-4075-8455-1a347d782e8a",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 20, 0]
+    },
+    "modules": [
+        {
+            "description": "Resource Pack Module",
+            "type": "resources",
+            "uuid": "2a10c0b9-d4a2-47d1-b2a3-9a605b9ba8b7",
+            "version": [1, 0, 0]
+        }
+    ]
+}

@@ -68,7 +68,7 @@ world.afterEvents.itemUse.subscribe((event) => {
     }
 });
 
-// Harder Gameplay: Buff newly spawned zombies
+// Harder Gameplay: Buff newly spawned zombies and add TNT placing logic
 world.afterEvents.entitySpawn.subscribe((event) => {
     const { entity } = event;
     if (entity.typeId === "minecraft:zombie") {
@@ -88,6 +88,37 @@ world.afterEvents.entitySpawn.subscribe((event) => {
         } catch (e) {}
     }
 });
+
+// TNT placing logic
+system.runInterval(() => {
+    for (const entity of world.getDimension("overworld").getEntities({ type: "minecraft:zombie" })) {
+        if (Math.random() < 0.05) { // 5% chance every 5 seconds to try and place TNT
+            const target = entity.target;
+            if (target && target.typeId === "minecraft:player") {
+                const dist = Math.sqrt(
+                    Math.pow(entity.location.x - target.location.x, 2) +
+                    Math.pow(entity.location.y - target.location.y, 2) +
+                    Math.pow(entity.location.z - target.location.z, 2)
+                );
+
+                if (dist < 5) {
+                    const block = entity.dimension.getBlock(entity.location);
+                    if (block && block.isAir) {
+                        block.setType("minecraft:tnt");
+                        entity.dimension.spawnEntity("minecraft:tnt", {
+                            x: entity.location.x,
+                            y: entity.location.y,
+                            z: entity.location.z
+                        });
+                        entity.dimension.playSound("random.fuse", entity.location);
+                        // Optional: remove the block and just spawn primed tnt if we want it to explode immediately
+                        block.setType("minecraft:air");
+                    }
+                }
+            }
+        }
+    }
+}, 100); // Every 5 seconds
 
 // UI update for thirst (more frequent)
 system.runInterval(() => {

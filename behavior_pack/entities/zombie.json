@@ -21,6 +21,23 @@
         "minecraft:behavior.break_door": {
           "priority": 1
         },
+        "minecraft:behavior.break_block": {
+          "priority": 1,
+          "blocks": [
+            "minecraft:dirt",
+            "minecraft:grass",
+            "minecraft:planks",
+            "minecraft:cobblestone",
+            "minecraft:fence",
+            "minecraft:oak_log",
+            "minecraft:birch_log",
+            "minecraft:spruce_log",
+            "minecraft:jungle_log",
+            "minecraft:acacia_log",
+            "minecraft:dark_oak_log"
+          ],
+          "break_time_multiplier": 2.0
+        },
         "minecraft:follow_range": {
           "value": 64,
           "max": 64

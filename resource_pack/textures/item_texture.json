@@ -4,6 +4,9 @@
     "texture_data": {
         "spoiled_food": {
             "textures": "textures/items/spoiled_food"
+        },
+        "dirty_water_bottle": {
+            "textures": "textures/items/dirty_water_bottle"
         }
     }
 }

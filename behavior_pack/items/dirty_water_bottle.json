@@ -1,0 +1,37 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "za:dirty_water_bottle",
+            "category": "nature"
+        },
+        "components": {
+            "minecraft:icon": {
+                "texture": "dirty_water_bottle"
+            },
+            "minecraft:display_name": {
+                "value": "Dirty Water Bottle"
+            },
+            "minecraft:use_animation": "drink",
+            "minecraft:food": {
+                "nutrition": 0,
+                "saturation_modifier": "low",
+                "can_always_eat": true,
+                "effects": [
+                    {
+                        "name": "nausea",
+                        "chance": 0.5,
+                        "duration": 10,
+                        "amplifier": 0
+                    },
+                    {
+                        "name": "poison",
+                        "chance": 0.2,
+                        "duration": 5,
+                        "amplifier": 0
+                    }
+                ]
+            }
+        }
+    }
+}

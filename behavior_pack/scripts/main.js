@@ -61,10 +61,16 @@ system.runInterval(() => {
 // Hydration logic
 world.afterEvents.itemUse.subscribe((event) => {
     const { itemStack, source: player } = event;
-    if (itemStack.typeId === "minecraft:potion" || itemStack.typeId === "minecraft:water_bucket" || itemStack.typeId === "minecraft:honey_bottle") {
+    if (itemStack.typeId === "minecraft:potion" || itemStack.typeId === "minecraft:water_bucket" || itemStack.typeId === "minecraft:honey_bottle" || itemStack.typeId === "za:dirty_water_bottle") {
         let thirst = getThirst(player);
-        setThirst(player, thirst + 10);
-        player.sendMessage("§bYour thirst has been quenched.");
+        let amount = 10;
+        if (itemStack.typeId === "za:dirty_water_bottle") {
+            amount = 5;
+            player.sendMessage("§6The water was murky, but it quenched some of your thirst.");
+        } else {
+            player.sendMessage("§bYour thirst has been quenched.");
+        }
+        setThirst(player, thirst + amount);
     }
 });
 
